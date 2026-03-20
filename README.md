@@ -10,8 +10,8 @@ Arxiv: Rethinking Test Time Scaling for Flow-Matching Generative Models
   <span>Minghao&nbsp;Sun</span><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
   <a href="https://scholar.google.com/citations?user=N8Nuv1kAAAAJ&hl=en" target="_blank">Zhengyang&nbsp;Yu</a><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
   <a href="https://scholar.google.com/citations?user=7x6GZ1EAAAAJ&hl=en" target="_blank">Vinay&nbsp;Kumar&nbsp;Verma</a><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
-  <span>Soumya&nbsp;Roy</span><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
-  <span>Sumit&nbsp;Negi</span><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
+  <a href="https://scholar.google.com/citations?user=SFcgz0oAAAAJ&hl=en" target="_blank">Soumya&nbsp;Roy</a><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
+  <a href="https://scholar.google.com/citations?user=1hHneSIAAAAJ&hl=en" target="_blank">Sumit&nbsp;Negi</a><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
   <a href="https://users.cecs.anu.edu.au/~hongdong/" target="_blank">Hongdong&nbsp;Li</a><sup>1,2</sup> &ensp; <b>&middot;</b> &ensp;
   <a href="https://sites.google.com/view/djcampbell/" target="_blank">Dylan&nbsp;Campbell</a><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
 </p>
