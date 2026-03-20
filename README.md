@@ -38,58 +38,45 @@ python tts/test.py --algorithm global_trim \
 ```
 
 ---
-Other baselines t
-Start from `n` candidates, pick the best, then search `k` rounds of `m` neighbours within radius `r`.
+Other baselines implemented for Flux1.dev
 
 ```bash
+# Best of N
 python tts/test.py --algorithm bon \
     --reward ensemble \
     --n 6
 
+# Noise space greedy search
+# Start from `n` candidates, pick the best, then search `k` rounds of `m` neighbours within radius `r`.
 python tts/test.py --algorithm noise_greedy \
     --reward hpsv2 \
     --n 2 --k 2 --m 2 --r 0.15
-```
 
----
-
-### Noise Epsilon-Greedy Search
-Same as noise greedy, but each neighbour is fully random with probability `epsilon`.
-
-```bash
+# Noise Epsilon-Greedy Search
+# Same as noise greedy, but each neighbour is fully random with probability `epsilon`.
 python tts/test.py --algorithm noise_eps_greedy \
     --reward hpsv2 \
     --n 2 --k 2 --m 2 --r 0.15 --epsilon 0.4
-```
 
----
-
-### Search over Path (SoP)
-Denoise `d_b` steps, re-noise back `d_f` steps to spawn `m` continuations, keep the best, repeat.
-
-```bash
+# Search over Path (SoP)
+# Denoise `d_b` steps, re-noise back `d_f` steps to spawn `m` continuations, keep the best, repeat.
 python tts/test.py --algorithm sop \
     --reward hpsv2 \
     --m 4 --d_b 10 --d_f 5
-```
 
----
-
-### Trajectory Greedy (Local-Path)
-Replicate the best latent `n` times at each stage; SDE noise causes divergence. Requires SDE scheduler.
-
-```bash
+# Trajectory Greedy (Local-Path)
+# Replicate the best latent `n` times at each stage; SDE noise causes divergence. Requires SDE scheduler.
 python tts/test.py --algorithm traj_greedy \
     --reward hpsv2 \
     --n 6 --d 7
-```
 
----
+# Early Selection
+# Denoise all `n` candidates to step `d`, select the best, finish denoising to completion.
+python tts/test.py --algorithm early_select \
+    --reward hpsv2 \
+    --n 13 --d 15
 
-### SMC-SDE
-Sequential Monte Carlo with SDE scheduler. Maintain `n` particles, resample by importance weights at each stage.
-
-```bash
+# Sequential Monte Carlo with SDE scheduler. Maintain `n` particles, resample by importance weights at each stage.
 python tts/test.py --algorithm smc \
     --reward hpsv2 \
     --n 6 --d 7 \
@@ -104,13 +91,9 @@ python tts/test.py --algorithm smc \
     --reward imagereward \
     --n 6 --d 7 \
     --lmbda 8 --tempering increase --potential max --resample ssp
-```
----
 
-### SMC-ODE (Pruning)
-Same as SMC-SDE but uses ODE scheduler — resampling becomes pure pruning (unique indices only).
-
-```bash
+# SMC-ODE (Pruning)
+# Same as SMC-SDE but uses ODE scheduler — resampling becomes pure pruning (unique indices only).
 python tts/test.py --algorithm smc_ode \
     --reward hpsv2 \
     --n 8 --d 7 \
@@ -133,20 +116,10 @@ python tts/test.py --algorithm smc_ode \
 ```
 
 ---
-### Early Selection
-Denoise all `n` candidates to step `d`, select the best, finish denoising to completion.
-
-```bash
-python tts/test.py --algorithm early_select \
-    --reward hpsv2 \
-    --n 13 --d 15
-```
-
----
 ## Our Method
 
 ### Global Trim
-Start with `n` candidates. At each stage denoise `d` steps, score, and prune the bottom keeping top `gamma` fraction. Repeat until fully denoised.
+
 
 ```bash
 python tts/test.py --algorithm global_trim \
@@ -219,6 +192,9 @@ python tts/test.py --algorithm global_trim \
     --n 20 --d 7 --gamma 0.5 --repel --use_narf \
     --prompt assets/interesting.json
 ```
+
+
+
 
 ---
 
