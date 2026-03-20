@@ -25,16 +25,21 @@ Generate `n` independent images, return the highest-scoring one.
 
 ```bash
 
-# hgahahaha 
+# input prompt 
 python tts/test.py --algorithm global_trim \
-    --reward imagereward \
+    --reward hpsv2 \
     --n 10 --d 7 --gamma 0.5 --repel --use_narf \
-    --prompt assets/interesting.json
+    --prompt "A dog with a shocked, bug-eyed expression"
 
-
-python tts/test.py --algorithm bon \
+# input a json file for all the prompts
+# enable multiple GPUs
+# use ensemble rewards
+python tts/test.py --algorithm global_trim \
     --reward ensemble \
-    --n 6
+    --n 10 --d 7 --gamma 0.5 --repel --use_narf \
+    --prompt "A dog with a shocked, bug-eyed expression"
+
+
 ```
 
 ---
@@ -43,6 +48,10 @@ python tts/test.py --algorithm bon \
 Start from `n` candidates, pick the best, then search `k` rounds of `m` neighbours within radius `r`.
 
 ```bash
+python tts/test.py --algorithm bon \
+    --reward ensemble \
+    --n 6
+
 python tts/test.py --algorithm noise_greedy \
     --reward hpsv2 \
     --n 2 --k 2 --m 2 --r 0.15
