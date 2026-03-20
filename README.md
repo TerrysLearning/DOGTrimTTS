@@ -9,7 +9,7 @@ Arxiv: Rethinking Test Time Scaling for Flow-Matching Generative Models
   <a href="https://charliesong1999.github.io/" target="_blank">Changlin&nbsp;Song</a><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
   <span>Minghao&nbsp;Sun</span><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
   <a href="https://scholar.google.com/citations?user=N8Nuv1kAAAAJ&hl=en" target="_blank">Zhengyang&nbsp;Yu</a><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
-  <span>Vinay&nbsp;Kumar&nbsp;Verma</span><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
+  <a href="https://scholar.google.com/citations?user=7x6GZ1EAAAAJ&hl=en" target="_blank">Vinay&nbsp;Kumar&nbsp;Verma</a><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
   <span>Soumya&nbsp;Roy</span><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
   <span>Sumit&nbsp;Negi</span><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
   <a href="https://users.cecs.anu.edu.au/~hongdong/" target="_blank">Hongdong&nbsp;Li</a><sup>1,2</sup> &ensp; <b>&middot;</b> &ensp;
