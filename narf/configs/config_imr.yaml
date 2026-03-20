@@ -1,0 +1,41 @@
+reward_name: imr
+seed: 2000
+log:
+  name: imr_exp4
+  save_checkpoint: true
+  print_loss_every_iter: 1
+  valid_every_epoch: 1
+  do_valid: true
+  checkpoint_dir: out_ckpt
+  eval_start: true
+time_config:
+  step_targets: [21, 14, 7] 
+data:
+  train_gt_file: ../labels/data_train_p5000_n4_d7_ntm_imr.json
+  train_data_folder: ../data/data_train_p5000_n4_d7_ntm
+  train_prompts_file: ../assets/hpd_train.json
+  train_prompt_range: 5000 # train first 2000 prompts, etc.
+  train_num_per_prompt: 4 # number images per prompt 
+  valid_gt_file: ../labels/data_test_p100_n20_d7_imr.json
+  valid_data_folder: ../data/data_test_p100_n20_d7
+  valid_prompts_file: ../assets/hpd_test.json
+  valid_prompt_range: 100
+  valid_num_per_prompt: 20
+train:
+  batch_size: 50
+  accum_steps: 2
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_eps: 1.0e-08
+  lr: 5.0e-7
+  min_lr_scale: 0.2
+  max_grad_norm: 5.0
+  scheduler_type: linear
+  warmup_ratio: 0.0
+  warmup_type: linear
+  curr_interval: 2
+  curr_interval_add: 2 # add one epoch after interval
+  loss_preference_tau: 2
+  use_BT_loss: false
+  use_MSE_loss: true
+  weight_decay: 0.01
