@@ -2,10 +2,22 @@
 
 Arxiv: Rethinking Test Time Scaling for Flow-Matching Generative Models
 
-## Introducion
 
 ![Example](assets/dog_knife.png)
+
+## Introducion
 ![Motivation](assets/motivation_plot.png)
+
+## Setup
+```bash
+conda create --name tts python=3.12
+conda activate tts
+pip install transformers -U
+pip install git+https://github.com/huggingface/diffusers.git
+pip install torch torchvision
+pip install matplotlib numba scipy accelerate einops clint ftfy timm fairscale datasets 
+pip install git+https://github.com/openai/CLIP.git
+```
 
 
 
