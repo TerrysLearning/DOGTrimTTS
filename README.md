@@ -7,6 +7,8 @@ Arxiv: Rethinking Test Time Scaling for Flow-Matching Generative Models
 
 
 ![Example](assets/dog_knife.png)
+![Example2](assets/someresults.png)
+
 
 ## Introducion
 ![Motivation](assets/motivation_plot.png)
