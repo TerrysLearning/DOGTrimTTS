@@ -4,8 +4,10 @@ Arxiv: Rethinking Test Time Scaling for Flow-Matching Generative Models
 
 ## Introducion
 
-![Motivation](assets/motivation_plot.png)
 ![Example](assets/dog_knife.png)
+![Motivation](assets/motivation_plot.png)
+
+
 
 ### Best-of-N (BON)
 Generate `n` independent images, return the highest-scoring one.
