@@ -38,7 +38,7 @@ python tts/test.py --algorithm global_trim \
 ```
 
 ---
-### Noise Greedy Search
+Other baselines t
 Start from `n` candidates, pick the best, then search `k` rounds of `m` neighbours within radius `r`.
 
 ```bash
