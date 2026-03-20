@@ -115,96 +115,30 @@ python tts/test.py --algorithm smc_ode \
     --lmbda 0.5 --tempering increase --potential max --resample ssp
 ```
 
----
-## Our Method
 
-### Global Trim
+## Usage of Flux1.dev Repel 
+See pipeline_repel and tts/utils_flux.py 
 
 
+## Usage of NARF 
+In narf
 ```bash
-python tts/test.py --algorithm global_trim \
-    --reward ensemble \
-    --n 15 --d 7 --gamma 0.5 \
-    --repel \
-    --use_narf
-```
+# Train the model: 
+cd narf
+accelerate launch --num_processes=4 train.py --config configs/config_hps.yaml
 
-With a single reward model:
-
-```bash
-python tts/test.py --algorithm global_trim \
-    --reward hpsv2 \
-    --n 15 --d 7 --gamma 0.5 --repel --use_narf \
-    --prompt assets/interesting.json
-
-python tts/test.py --algorithm bon \
-    --reward hpsv2 \
-    --n 1 \
-    --prompt assets/interesting.json
-
-python tts/test.py --algorithm global_trim \
-    --reward hpsv2 \
-    --n 15 --d 7 --gamma 0.5 --repel --use_narf \
-    --prompt assets/interesting.json
-
-
-
-python tts/test.py --algorithm bon \
-    --reward hpsv2 \
-    --n 1 \
-    --prompt assets/interesting.json
-
-python tts/test.py --algorithm global_trim \
-    --reward hpsv2 \
-    --n 5 --d 7 --gamma 0.5 --repel --use_narf \
-    --prompt assets/interesting.json
-
-python tts/test.py --algorithm global_trim \
-    --reward hpsv2 \
-    --n 10 --d 7 --gamma 0.5 --repel --use_narf \
-    --prompt assets/interesting.json
-
-python tts/test.py --algorithm global_trim \
-    --reward hpsv2 \
-    --n 20 --d 7 --gamma 0.5 --repel --use_narf \
-    --prompt assets/interesting.json
-
-
-
-python tts/test.py --algorithm bon \
-    --reward imagereward \
-    --n 1 \
-    --prompt assets/interesting.json
-
-python tts/test.py --algorithm global_trim \
-    --reward imagereward \
-    --n 5 --d 7 --gamma 0.5 --repel --use_narf \
-    --prompt assets/interesting.json \
-    --num_gpus 2
-
-python tts/test.py --algorithm global_trim \
-    --reward imagereward \
-    --n 10 --d 7 --gamma 0.5 --repel --use_narf \
-    --prompt assets/interesting.json
-
-python tts/test.py --algorithm global_trim \
-    --reward imagereward \
-    --n 20 --d 7 --gamma 0.5 --repel --use_narf \
-    --prompt assets/interesting.json
+# generate the dataset to train
+python data/gen_data.py --d 7 --num_prompts 100 --num_gpus 2 --n 20 --prompt_file assets/hpd_train.json 
 ```
 
 
 
 
 ---
-
 ## Notes
 
 - **Ensemble reward** scores with HPSv2 + PickScore + ImageReward and uses rank-sum for search. Individual scores `[hps, pick, imr]` are logged and saved per prompt.
-- **SDE scheduler** is loaded automatically for `traj_greedy` and `smc`. All other methods use the ODE scheduler.
+- **SDE scheduler** for baselines are from [rf-inversion](https://rf-inversion.github.io/). All other methods use the ODE scheduler.
 - Results are saved to `<out_root>/<run_name>.json` with per-prompt scores and timing. The run resumes automatically if the JSON already exists.
+- More will be updated, if you like our work, please cite. 
 
-
-
-
-python data/gen_data.py --d 7 --num_prompts 100 --num_gpus 2 --n 20 --prompt_file assets/hpd_train.json
