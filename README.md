@@ -20,11 +20,8 @@ pip install git+https://github.com/openai/CLIP.git
 ```
 
 ## Run
-
-Generate `n` independent images, return the highest-scoring one.
-
+Download the narf checkpoint : [todo]
 ```bash
-
 # input prompt 
 python tts/test.py --algorithm global_trim \
     --reward hpsv2 \
@@ -38,12 +35,9 @@ python tts/test.py --algorithm global_trim \
     --reward ensemble \
     --n 10 --d 7 --gamma 0.5 --repel --use_narf \
     --prompt "A dog with a shocked, bug-eyed expression"
-
-
 ```
 
 ---
-
 ### Noise Greedy Search
 Start from `n` candidates, pick the best, then search `k` rounds of `m` neighbours within radius `r`.
 
