@@ -5,7 +5,7 @@ Arxiv: Rethinking Test Time Scaling for Flow-Matching Generative Models
 
 </div>
 
-
+Qualitative Outcomes using our method with Flux1.dev:
 ![Example](assets/dog_knife.png)
 ![Example2](assets/someresults.png)
 
