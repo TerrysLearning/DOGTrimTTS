@@ -1,4 +1,5 @@
 <div align="center">
+
 # DOG-Trim
 Arxiv: Rethinking Test Time Scaling for Flow-Matching Generative Models
 
