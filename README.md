@@ -19,12 +19,19 @@ pip install matplotlib numba scipy accelerate einops clint ftfy timm fairscale d
 pip install git+https://github.com/openai/CLIP.git
 ```
 
+## Run
 
-
-### Best-of-N (BON)
 Generate `n` independent images, return the highest-scoring one.
 
 ```bash
+
+# hgahahaha 
+python tts/test.py --algorithm global_trim \
+    --reward imagereward \
+    --n 10 --d 7 --gamma 0.5 --repel --use_narf \
+    --prompt assets/interesting.json
+
+
 python tts/test.py --algorithm bon \
     --reward ensemble \
     --n 6
