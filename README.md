@@ -1,7 +1,8 @@
 <div align="center">
 
-# DOG-Trim
-Arxiv: Rethinking Test Time Scaling for Flow-Matching Generative Models
+# DOG-Trim: Rethinking Test Time Scaling for Flow-Matching Generative Models
+
+[Arxiv](https://arxiv.org/abs/2511.22242)
 
 
 <p align="center">
@@ -26,12 +27,12 @@ Arxiv: Rethinking Test Time Scaling for Flow-Matching Generative Models
 ---
 
 Qualitative Outcomes using our method with Flux1.dev:
-![Example2](assets/someresults.png)
 ![Example](assets/dog_knife.png)
+![Example2](assets/someresults.png)
 
 
 
-## Introducion
+## Introduction
 ![Motivation](assets/motivation_plot.png)
 
 ## Setup
