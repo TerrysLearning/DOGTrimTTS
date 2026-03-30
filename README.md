@@ -169,3 +169,11 @@ python data/gen_data.py --d 7 --num_prompts 100 --num_gpus 2 --n 20 --prompt_fil
 - Results are saved to `<out_root>/<run_name>.json` with per-prompt scores and timing. The run resumes automatically if the JSON already exists.
 - More will be updated, if you like our work, please cite. 
 
+```bash
+@article{yu2026RethinkTTS,
+  title={Rethinking Test Time Scaling for Flow-Matching Generative Models},
+  author={Yu, Qingtao and Song, Changlin and Sun, Minghao and Yu, Zhengyang and Verma, Vinay Kumar and Roy, Soumya and Negi, Sumit and Li, Hongdong and Campbell, Dylan},
+  journal={arXiv preprint arXiv:2511.22242},
+  year={2026}
+}
+```
