@@ -47,8 +47,8 @@ pip install git+https://github.com/openai/CLIP.git
 ```
 
 ## Run
-Download the narf first version checkpoint [narf_ckpt_v1](https://huggingface.co/TerryYu/DOGTrim) and put it under the folder narf.
-If the narf version not found, it will use the original clean-image reward models. 
+Download the narf first version checkpoint [narf_ckpt_v1](https://huggingface.co/TerryYu/DOGTrim) from huggingface🤗 and put it under the folder narf.
+If the narf checkpoints not found, it will use the original clean-image reward models. 
 ```bash
 # input prompt 
 python tts/test.py --algorithm global_trim \
